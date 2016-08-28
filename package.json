@@ -4,8 +4,8 @@
   "description": "syncronization node server",
   "main": "dist/index.js",
   "scripts": {
-    "start": "nodemon dist/index.js --exec babel-node",
-    "build": "babel lib -d dist",
+    "start": "npm run build && nodemon dist/index.js --exec babel-node",
+    "build": "cp lib/client/index.html dist/client/index.html && babel lib -d dist",
     "serve": "node dist/index.js",
     "test": "mocha --compilers js:babel-register"
   },
