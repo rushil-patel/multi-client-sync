@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="scripts/require.js"
+    <script src="client/index.js"></script>
+    
+    <script>
+			var socket = io.connect('http://localhost:3000');
+			service.init(socket);      
+      socket.on('time_sync', (data) => {
+        console.log(data)
+      });
+        // setInterval(function () {
+	      	// setTimeout(function(){
+		      //   document.getElementById("offset").innerHTML=  "Server time: " + ntp.serverTime(); //what time the server thinks it is
+		      //   document.getElementById("offset").innerHTML+= "<p>Offset: " + ntp.offset();
+		 
+		      // },( 1000-(Date.now() - ntp.offset())%1000));//update the display at our guess of where the server thinks a new second occurs
+        // },1000);
+	  
+    </script>
+
+  </head>
+  <body>
+    <span id="offset"></span>
+    
+  </body>
+</html>
